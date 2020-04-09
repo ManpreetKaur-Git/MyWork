@@ -1,0 +1,16 @@
+- Unique Key value pairs
+- Key (could be anything,,,but same types)... int,sstring...
+- value .. int, string....
+
+ex : [1,"gurjeet"]
+[2,"MK"]
+[3,"yog"]
+
+ex: ["yog",12]
+["GS",22]
+
+ex : [null,null]
+["sds",null] --HMap
+--------
+get,set/put
+
