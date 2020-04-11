@@ -1,7 +1,0 @@
-c:\users\mkaur24.000\documents\visual studio 2015\Projects\GSClass\GSClass\bin\Debug\GSClass.exe.config
-C:\mk\GSClass-20200327T103053Z-001\GSClass\GSClass\bin\Debug\GSClass.exe.config
-C:\mk\GSClass-20200327T103053Z-001\GSClass\GSClass\bin\Debug\GSClass.exe
-C:\mk\GSClass-20200327T103053Z-001\GSClass\GSClass\bin\Debug\GSClass.pdb
-C:\mk\GSClass-20200327T103053Z-001\GSClass\GSClass\obj\Debug\GSClass.csprojAssemblyReference.cache
-C:\mk\GSClass-20200327T103053Z-001\GSClass\GSClass\obj\Debug\GSClass.exe
-C:\mk\GSClass-20200327T103053Z-001\GSClass\GSClass\obj\Debug\GSClass.pdb
