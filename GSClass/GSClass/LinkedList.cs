@@ -425,7 +425,7 @@ namespace GSClass
             while (Header1.next != null)
             {
                 Header1 = Header1.next;
-                if (Header1 == refHeader)
+                if (Header1 == refHeader)  // doubt
                 {
                     Console.WriteLine(" Loop is there on " + Header1.data);
                     return true;
@@ -462,7 +462,7 @@ namespace GSClass
         }
 
 
-        public void AlternateElementinmyLL()
+        public void AlternateElementinmyLL() // print alternate elements
         {
             int nodenum = 1;
             MyNode refHeader = Header;
@@ -561,7 +561,7 @@ namespace GSClass
                 if (objDict.ContainsKey(dupHeader.data))
                 {
                     objDict.TryGetValue(dupHeader.data, out int value);
-                    
+
                     value += 1;
                     objDict[dupHeader.data] = value;
                 }
@@ -598,7 +598,7 @@ namespace GSClass
         }
 
 
-        public void MergetwoLL(MyNode Header1, MyNode Header2)
+        public void MergetwoLL(MyNode Header1, MyNode Header2) // Add data of each node of two LLn and create a new LL
         {
             Header = new MyNode();
             MyNode refprevnode1 = Header1;
@@ -629,6 +629,25 @@ namespace GSClass
             Header1 = refprevnode1;
             Header2 = refprevnode2;
             Header = refprevnode;
+
+
+            /* LinkedListRev obj1 = new LinkedListRev();
+      obj1.InsertNodeinEnd("1");
+          obj1.InsertNodeinEnd("2");
+          obj1.InsertNodeinEnd("3");
+          obj1.InsertNodeinEnd("4");
+          obj1.InsertNodeinEnd("5");
+
+          LinkedListRev obj2 = new LinkedListRev();
+      obj2.InsertNodeinEnd("2");
+          obj2.InsertNodeinEnd("3");
+
+          LinkedListRev obj3 = new LinkedListRev();
+      obj3.MergetwoLL(obj1.getheader(), obj2.getheader());
+
+          obj1.DisplayNode();
+          obj2.DisplayNode();
+          obj3.DisplayNode(); */
         }
 
 
@@ -660,14 +679,112 @@ namespace GSClass
             Header = refheader;
         }
 
+        public void deleteNodeName(string data)
+        {
+            MyNode refheader = Header;
+            MyNode prevheader = Header;
+            int nodeNum = 1;
+
+            while (Header.next != null)
+            {
+                if (Header.data == data && nodeNum != 1)
+                {
+                    prevheader.next = Header.next;
+                    prevheader = refheader; // beta previous header bhi tou move krhra hai .usko bhi original positoon pr laoge ke nae
+                    Header = prevheader;//// my display funtion only prints header. wrna is line ki need nae the.
+                    break;
+
+                }
+                else if (Header.data == data && nodeNum == 1)
+                {
+                    MyNode newHeader;
+                    newHeader = Header.next;
+                    Header.next = null;
+                    Header = newHeader;
+                    break;
+                }
+                else
+                {
+                    prevheader = Header;
+                    Header = Header.next;
+                    nodeNum++;
+                }
+
+            }
+
+
+            if (Header.next == null)
+            {
+                prevheader.next = null;
+                prevheader = refheader;
+                Header = prevheader;
+            }
+
+
+        }
+
+        public void sortLL()
+        {
+            MyNode prevHeader = Header;
+            MyNode refheader = Header;
+            string temp;
+            countNodes(out int count);
+            for (int i = 1; i < count; i++)
+            {
+                while (Header.next != null)
+                {
+                    if (Convert.ToInt32(prevHeader.data) > Convert.ToInt32(Header.data))
+                    {
+                        temp = prevHeader.data;
+                        prevHeader.data = Header.data;
+                        Header.data = temp;
+                    }
+
+                    prevHeader = Header;
+                    Header = Header.next;
+
+                }
+
+                if (Convert.ToInt32(prevHeader.data) > Convert.ToInt32(Header.data))
+                {
+                    temp = prevHeader.data;
+                    prevHeader.data = Header.data;
+                    Header.data = temp;
+                }
+
+                Header = refheader;
+                prevHeader = refheader;
+            }
+
+
+        }
+
+
+
+
+       
+
+
+
 
     }
+
+
+
+
+
+
 
     public class MyNode   // Composite structure for our LL. As the node has two parts data and Node itself. This is the reason we created the object of MYNode class
     {
         public string data;
         public MyNode next;  // object of My node class
 
+        //MyNode(string data)  // parameterized contructor
+        //{
+        //    this.data = data;
+        //    this.next = null;
+        //}
 
     }
 

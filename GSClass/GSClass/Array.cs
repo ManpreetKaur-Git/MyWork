@@ -429,9 +429,159 @@ Output:
         }
 
 
+        public void EnterValuefrouser()
+        {
+            string[] myInputarray = new string[20];
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine("Enter Value" + i + " :");
+                myInputarray[i - 1] = Console.ReadLine();
+                while (myInputarray[i - 1] == "" && string.IsNullOrEmpty(myInputarray[i - 1]) == true)
+                {
+                    Console.WriteLine("Please enter valid value.");
+                    myInputarray[i - 1] = Console.ReadLine();
+                }
+                // myInputarray[i - 1] = myInputarray[i - 1].Equals(null) ? "0" : myInputarray[i - 1];
+            }
+            foreach (string s in myInputarray)
+            {
+                Console.WriteLine(s);
+            }
+
+        }
+
+        public void rotateArray(int[] myArr1, int n)
+        {
+            //int[] myArr = { 1,2,3,4,5,6,7};
+            // n = 8;
+            n = n % myArr1.Length;
+
+
+            for (int j = 1; j <= n; j++)
+            {
+                if (true)
+                {
+                    int temp = 0;
+
+                    int i = myArr1.Length - 1;
+                    temp = myArr1[0];
+                    myArr1[0] = myArr1[i];
+                    for (; i >= 2; i--)
+                    {
+                        myArr1[i] = myArr1[i - 1];
+                    }
+                    myArr1[i] = temp;
+
+                } //it is shifting 1 place
+
+            }
+            foreach (int i in myArr1)
+            {
+                Console.WriteLine(i);
+            }
 
 
 
+        }
+
+        public void rotateArray2(int[] myArr1, int n)
+        {
+            int[] myArr2 = new int[myArr1.Length];
+            //int[] myArr = { 1,2,3,4,5,6,7};
+            n = n % myArr1.Length;
+            //myArr1[0]-- myArr2[2];
+            //myArr1[1]-- myArr2[3];
+            //myArr1[2]-- myArr2[4];
+            //myArr1[3]-- myArr2[5];
+            //myArr1[4]-- myArr2[6];
+            //myArr1[5]-- myArr2[0];
+            //myArr1[6]-- myArr2[1];
+            for (int i = 0; i <= myArr2.Length - 1; i++)
+            {
+                myArr2[(i + n) % myArr2.Length] = myArr1[i];
+            }
+
+            for (int i = 0; i < myArr1.Length; i++)
+            {
+                myArr1[i] = myArr2[i];
+            }
+
+            foreach (int i in myArr1)
+            {
+                Console.WriteLine(i);
+            }
+
+
+
+        }
+
+        public int largestnumformed(int[] myArr)
+        {
+            //Write a program to form the largest number from a given array
+            //ex : {64,5,1,2,,8} = 865412
+
+            int num = 0;
+
+            Dictionary<int, int> mydict = new Dictionary<int, int>();
+
+            for (int j = 1; j <= myArr.Length; j++)
+            {
+                int largestnum = Int32.MinValue;
+                for (int i = 0; i < myArr.Length; i++)
+                {
+                    if (largestnum < myArr[i] && !mydict.ContainsKey(myArr[i]))
+                    {
+                        largestnum = myArr[i];
+                    }
+
+                }
+
+                mydict.Add(largestnum, j);
+            }
+
+
+            foreach (int key in mydict.Keys)
+            {
+                num = num * 10 + key;
+            }
+
+
+
+
+
+            return num;
+        }
+
+        public void segregateArray(int[] myarr)
+        {
+            //{0,0,1,0,1,0,1,1,0}= 000001111
+            int[] newArray = new int[myarr.Length];
+            int j = 0;
+            for (int i = 0; i < myarr.Length; i++)
+            {
+                if (myarr[i] != 1)
+                {
+                    newArray[j] = myarr[i];
+                    j++;
+                }
+
+            }
+
+            for (int i = 0; i < myarr.Length; i++)
+            {
+                if (myarr[i] != 0)
+                {
+                    newArray[j] = myarr[i];
+                    j++;
+                }
+            }
+
+            foreach(int i in newArray)
+            {
+                Console.WriteLine(i);
+            }
+            
+        }
 
         ///********************** 2D-Array********************************** *\
 

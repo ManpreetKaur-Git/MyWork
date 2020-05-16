@@ -637,6 +637,92 @@ namespace GSClass
         }
 
 
+
+        public void waystoClimb(int n)
+        {
+            // You need to write a function to climb n steps you can climb either 1 step at a time or 2 steps a time,
+            //write a function to return a number of ways to climb a ladder with n step.
+            //We can climb stairs with either- 1 step , 2 step
+            // 1 Stair  --> 1
+            // 2 Stairs - (1,1) , (2) --> 2
+            // 3 stairs - (1,1,1), (2,1) , (1,2) --> 3
+            // 4 stairs- (1,1,1,1), (1,2,1) ,(1,1,2), (2,2),(2,1,1) --> 5
+            //     5 sstairs
+            //   n stairs --> waystoClimb(name-1) + waystoClimb(name-2)
+
+            //     1,2,3,5,8,13
+
+            int first = 1;
+            int second = 2;
+            int third = 0;
+            if (n == 1)
+                Console.WriteLine("No. of ways for 1 stair" + first);
+            else if (n == 2)
+                Console.WriteLine("No. of ways for 1 stair" + second);
+            else
+            {
+                for (int i = 1; i <= n - 2; i++)
+                {
+                    third = first + second;
+                    first = second;
+                    second = third;
+                }
+                Console.WriteLine("No. of ways for " + n + "  stairs -> " + third);
+            }
+        }
+
+        public void generateRandomNumber(int min, int max)
+        {
+            //Write code for Generate Random No in a range from min to max? 
+            Random ob = new Random();
+
+            int rand = ob.Next(min, max);
+            Console.WriteLine("Random number generated : " + rand);
+        }
+
+        public void countwordinarticle(string article, string word)
+        {  
+            ////How to return highest occurred character in a String?
+            //Design an algorithm to find the frequency of occurrence of a word in an article?
+            
+            char[] delimiter = { ' ', '.' };
+            string[] myarray = article.ToUpper().Split(delimiter).ToArray();
+            Dictionary<string, int> mydict = new Dictionary<string, int>();
+
+            for (int i = 0; i < myarray.Length; i++)
+            {
+                if (mydict.ContainsKey(myarray[i]))
+                {
+                    mydict.TryGetValue(myarray[i], out int value);
+                    value++;
+                    mydict[myarray[i]] = value;
+                }
+                else
+                    mydict.Add(myarray[i], 1);
+            }
+
+            int largest = Int32.MinValue;
+            string largkey=string.Empty;
+            foreach (string key in mydict.Keys) ////How to return highest occurred character in a String? print whose key is largest.
+            {
+                mydict.TryGetValue(key, out int value);
+                if (largest < value)
+                {
+                    largest = value;
+                    largkey = key;
+                }
+
+            }
+
+            Console.WriteLine("Largest:" + largest + "Key : " + largkey);
+
+        }
+
+
+
+
+
+
         //How to find all permutations of String.
 
         //Write a program to check if a String contains another String like indexOf ()
@@ -658,7 +744,7 @@ namespace GSClass
 
 
         //      How to check if a String is a valid shuffle of two String?
-        
+
         //How to sort String on their length in Java?
 
 
@@ -669,7 +755,7 @@ namespace GSClass
         //second = "def", 
         //third = "dabecf"
 
-        //How to return highest occurred character in a String?
+        
 
 
 

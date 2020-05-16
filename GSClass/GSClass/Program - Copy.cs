@@ -7,6 +7,42 @@ using System.Threading.Tasks;
 
 namespace GSClass
 {
+
+//    protected baseemp()
+//    {
+//        this.id = 2;
+//        print();
+//    }
+
+//    public abstract void print();
+
+//    public virtual void Name()
+//    {
+//        Console.WriteLine("Manpreet");
+//    }
+//}
+//public class FullEmp : baseemp
+//{
+//    public FullEmp()
+//    { }
+
+//    public override void print()
+//    {
+//        Console.WriteLine("provided definition");
+//    }
+//}
+//public class contractEmployee : baseemp
+//{
+//    public override void print()
+//    {
+//        Console.WriteLine("provided definition");
+//    }
+//    public override void Name()
+//    {
+//        Console.WriteLine("Gurjeet");
+//    }
+//}
+
     //class Program
     //{
 
