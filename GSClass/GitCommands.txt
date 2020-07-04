@@ -1,9 +1,0 @@
-ssh-add C:/ssh/Bitbucket@123
-eval $(ssh-agent -s)
-$ git checkout ga/19.3 (master to feature)
-$ git add .
-$ git status
-$ git commit -m ""
-$ git push origin master
-$ git checkout -b feature/gaMMSEA (create new feature)
-$ git checkou master (from feature to master)
