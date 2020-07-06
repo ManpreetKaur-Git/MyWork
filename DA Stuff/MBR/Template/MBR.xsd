@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MBR">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Execution_Mode" />
+        <xs:element name="FileType" />
+        <xs:element name="PipeFileName" />
+        <xs:element name="SourceFile" />
+        <xs:element name="ProcessClosedClaims" />
+        <xs:element name="EnclFlag" />
+        <xs:element name="FilterFrozenClaims" />
+        <xs:element name="CheckImportReason" />
+        <xs:element name="CheckImportMedData" />
+        <xs:element name="CheckInsuffRes" />
+        <xs:element name="UseSuffixCode" />
+        <xs:element name="ImportPrintedChecks" />
+        <xs:element name="CheckImportProviderInvoiceNumber" />
+        <xs:element name="QueuedPayments" />
+        <xs:element name="GetfirstPayee" />
+        <xs:element name="SearchbySSN" />
+        <xs:element name="UsePayeeZipLookup" />
+        <xs:element name="DoNotAddPayee" />
+        <xs:element name="UseImportPayeeInfo" />
+        <xs:element name="ExcludeInvoice" />
+        <xs:element name="DuplicatesInclVoids" />
+        <xs:element name="DuplicatesUseSvcDts" />
+        <xs:element name="UseFeePayment" />
+        <xs:element name="JurisdictionStates1" />
+        <xs:element name="CorvelFeeTransType" />
+        <xs:element name="PostDateType1" />
+        <xs:element name="CorvelFeeIdentifier" />
+        <xs:element name="MBRPaymentsPrinted" />
+        <xs:element name="JurisdictionStates2" />
+        <xs:element name="CorvelFeeTransType2" />
+        <xs:element name="PostDateType2" />
+        <xs:element name="CorvelFeeIdentifier2" />
+        <xs:element name="MBRPayments2Printed" />
+        <xs:element name="ClearGrid" />
+        <xs:element name="BillDocumentNumberCheck" />
+        <xs:element name="AppendLog" />
+        <xs:element name="PrintProcessLog" />
+        <xs:element name="ExportType" />
+        <xs:element name="ExportDateOnUI" />
+        <xs:element name="ExportDateOnUIForEntity" />
+        <xs:element name="RemoveSSN" />
+        <xs:element name="LOBCodes" />
+        <xs:element name="ServiceCode" />
+        <xs:element name="ClaimStatus" />
+        <xs:element name="Entity_Category" />
+        <xs:element name="IncludeSuffix" />
+        <xs:element name="UpdateSuffix" />
+        <xs:element name="UpdAllSuffixes" />
+        <xs:element name="EntityTableIds" />
+        <xs:element name="PeopleTableIds" />
+        <xs:element name="OrgHier_To_Export" />
+        <xs:element name="ClaimAjusterEx" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
